@@ -189,7 +189,7 @@ public class Coordinator
                     checkGroup(message.getDestination());
                 }
 
-                if ((message.getOrigin() == User.ME.getID() || message.getOrigin() == currentDestination) && message.getMessageType() == currentMessageType)
+                if ((message.getOrigin() == User.ME.getID() || message.getOrigin() == currentDestination || message.getDestination() == currentDestination) && message.getMessageType() == currentMessageType)
                 {
                     Platform.runLater(() -> controller.addMessage(message));
                 }
@@ -203,7 +203,7 @@ public class Coordinator
 
     public void addRecipient(String name)
     {
-        getUser(name,user -> {
+        getUser(name, user -> {
             if (user != null)
             {
                 updateRecipients();
