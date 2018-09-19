@@ -3,6 +3,9 @@ package com.htwsaar.server;
 import com.htwsaar.container.Group;
 import com.htwsaar.container.Message;
 import com.htwsaar.container.User;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.messaging.converter.MappingJackson2MessageConverter;
 import org.springframework.messaging.simp.stomp.StompFrameHandler;
 import org.springframework.messaging.simp.stomp.StompHeaders;
@@ -236,10 +239,13 @@ public class ServerConnection
 
     public User createUser(String name, String password)
     {
-        return new RestTemplate().getForObject(
-                "http://localhost:8080/users?name={name}&password={password}",
-                User.class, name, password
-        );
+        RestTemplate restTemplate = new RestTemplate();
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+
+        HttpEntity<String> entity = new HttpEntity<String>("name=" + name + "&password=" + password, headers);
+        return restTemplate.postForObject("http://localhost:8080/users", entity,User.class);
     }
 
     /**
