@@ -1,0 +1,38 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<HBox fx:controller="com.htwsaar.controller.ChatController"
+      xmlns:fx="http://javafx.com/fxml" alignment="center" padding="$paddingAll">
+
+    <fx:define>
+
+        <Insets fx:id="paddingLeftRight" left="5" right="5"/>
+        <Insets fx:id="paddingRight" right="5"/>
+        <Insets fx:id="paddingTopBottom" top="5" bottom="5"/>
+        <Insets fx:id="paddingAll" top="5" bottom="5" left="5" right="5"/>
+    </fx:define>
+
+    <VBox HBox.hgrow="SOMETIMES" spacing="5" padding="$paddingRight">
+        <HBox alignment="CENTER_LEFT">
+            <Label fx:id="userName">User</Label>
+            <HBox HBox.hgrow="ALWAYS"/>
+            <Button fx:id="logout">Logout</Button>
+        </HBox>
+        <TextField fx:id="search"/>
+        <HBox spacing="5">
+            <Button fx:id="createGroup">Neue Gruppe</Button>
+            <Button fx:id="addRecipient">Freund hinzufügen</Button>
+            <Button fx:id="addMember">Mitglied hinzufügen</Button>
+        </HBox>
+        <ListView fx:id="recipients" VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS"/>
+    </VBox>
+
+    <VBox HBox.hgrow="ALWAYS" maxHeight="Infinity" spacing="5">
+        <ListView fx:id="chat" VBox.vgrow="ALWAYS" maxHeight="Infinity" maxWidth="Infinity"/>
+        <HBox spacing="5">
+            <TextField fx:id="message" HBox.hgrow="ALWAYS"/>
+            <Button fx:id="send">Send</Button>
+        </HBox>
+    </VBox>
+
+</HBox>

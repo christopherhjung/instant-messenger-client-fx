@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.PasswordField?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.htwsaar.controller.LoginController"
+      fx:id="container" alignment="CENTER">
+
+
+    <GridPane>
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="30.0" percentWidth="50.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
+        </columnConstraints>
+        <children>
+            <VBox GridPane.columnIndex="1" spacing="10.0">
+                <TextField fx:id="name" promptText="Username" />
+                <PasswordField fx:id="password" promptText="Password"/>
+                <HBox alignment="CENTER_RIGHT">
+                    <Button fx:id="login">Login</Button>
+                </HBox>
+            </VBox>
+        </children>
+    </GridPane>
+
+</VBox>
