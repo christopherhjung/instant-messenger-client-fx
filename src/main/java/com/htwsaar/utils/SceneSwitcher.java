@@ -1,4 +1,4 @@
-package com.htwsaar;
+package com.htwsaar.utils;
 
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;

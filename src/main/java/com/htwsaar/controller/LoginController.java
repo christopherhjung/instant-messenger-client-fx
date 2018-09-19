@@ -22,6 +22,9 @@ public class LoginController extends CoordinatorController
     @FXML
     TextField password;
 
+    @FXML
+    Button create;
+
     public void initialize()
     {
         EventHandler<KeyEvent> onEnter = event -> {
@@ -34,8 +37,7 @@ public class LoginController extends CoordinatorController
         login.setOnKeyPressed(onEnter);
         password.setOnKeyPressed(onEnter);
 
-        login.setOnMouseClicked(event -> {
-            getCoordinator().login(name.getText(), password.getText());
-        });
+        login.setOnMouseClicked(event -> getCoordinator().login(name.getText(), password.getText()));
+        create.setOnMouseClicked(event -> getCoordinator().create(name.getText(),password.getText()));
     }
 }

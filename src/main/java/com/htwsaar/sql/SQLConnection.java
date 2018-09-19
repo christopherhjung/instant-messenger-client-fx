@@ -1,6 +1,6 @@
 package com.htwsaar.sql;
 
-import com.htwsaar.Run;
+import com.htwsaar.utils.Run;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,4 +1,4 @@
-package com.htwsaar;
+package com.htwsaar.utils;
 /**
  * Methoden um Exceptions abzufangen ohne viel Code zu schreiben.
  * @author Christopher Jung

@@ -1,7 +1,5 @@
 package com.htwsaar.controller;
 
-import com.htwsaar.ChatItem;
-import com.htwsaar.RecipientItem;
 import com.htwsaar.container.Group;
 import com.htwsaar.container.Message;
 import com.htwsaar.container.User;

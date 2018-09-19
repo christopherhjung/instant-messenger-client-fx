@@ -1,5 +1,6 @@
-package com.htwsaar;
+package com.htwsaar.controller;
 
+import com.htwsaar.utils.Resources;
 import com.htwsaar.container.Group;
 import com.htwsaar.container.User;
 import javafx.fxml.FXML;
@@ -57,7 +58,7 @@ public class RecipientItem extends ListCell<Object>
             {
                 Group user = (Group) recipient;
 
-                this.name.setText(user.getName());
+                this.name.setText(user.getName() + " (Gruppe)");
             }
 
             setText(null);

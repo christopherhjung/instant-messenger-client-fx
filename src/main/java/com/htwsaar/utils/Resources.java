@@ -1,4 +1,4 @@
-package com.htwsaar;
+package com.htwsaar.utils;
 
 import java.net.URL;
 

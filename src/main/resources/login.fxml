@@ -23,7 +23,8 @@
             <VBox GridPane.columnIndex="1" spacing="10.0">
                 <TextField fx:id="name" promptText="Username" />
                 <PasswordField fx:id="password" promptText="Password"/>
-                <HBox alignment="CENTER_RIGHT">
+                <HBox alignment="CENTER_RIGHT" spacing="5">
+                    <Button fx:id="create">Registrieren</Button>
                     <Button fx:id="login">Login</Button>
                 </HBox>
             </VBox>

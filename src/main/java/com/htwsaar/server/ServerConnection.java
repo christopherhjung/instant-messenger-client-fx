@@ -1,6 +1,5 @@
 package com.htwsaar.server;
 
-import com.htwsaar.Coordinator;
 import com.htwsaar.container.Group;
 import com.htwsaar.container.Message;
 import com.htwsaar.container.User;
@@ -8,6 +7,7 @@ import org.springframework.messaging.converter.MappingJackson2MessageConverter;
 import org.springframework.messaging.simp.stomp.StompFrameHandler;
 import org.springframework.messaging.simp.stomp.StompHeaders;
 import org.springframework.messaging.simp.stomp.StompSession;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.socket.WebSocketHttpHeaders;
 import org.springframework.web.socket.client.standard.StandardWebSocketClient;
 import org.springframework.web.socket.messaging.WebSocketStompClient;
@@ -232,6 +232,14 @@ public class ServerConnection
             return true;
         }
         return false;
+    }
+
+    public User createUser(String name, String password)
+    {
+        return new RestTemplate().getForObject(
+                "http://localhost:8080/users?name={name}&password={password}",
+                User.class, name, password
+        );
     }
 
     /**

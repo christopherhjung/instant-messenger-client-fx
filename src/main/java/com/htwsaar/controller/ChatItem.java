@@ -1,5 +1,6 @@
-package com.htwsaar;
+package com.htwsaar.controller;
 
+import com.htwsaar.utils.Resources;
 import com.htwsaar.container.Message;
 import com.htwsaar.container.User;
 import javafx.fxml.FXML;

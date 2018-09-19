@@ -15,14 +15,6 @@ public class Main extends Application {
 
         Coordinator coordinator = new Coordinator();
         coordinator.start(primaryStage);
-
-
-        /*ChatController controller = loader.getController();
-
-
-        Coordinator mainCoordinator = new Coordinator(controller);
-        mainCoordinator.run();
-*/
     }
 
 

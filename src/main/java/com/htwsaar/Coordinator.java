@@ -10,6 +10,9 @@ import com.htwsaar.logic.MessageLogic;
 import com.htwsaar.logic.UserLogic;
 import com.htwsaar.server.ServerConnection;
 import com.htwsaar.sql.SQLConnection;
+import com.htwsaar.utils.Resources;
+import com.htwsaar.utils.Run;
+import com.htwsaar.utils.SceneSwitcher;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -83,6 +86,15 @@ public class Coordinator
         } catch (Exception e)
         {
             logout();
+        }
+    }
+
+    public void create(String user, String password)
+    {
+        User created = ServerConnection.INSTANCE.createUser(user, password);
+        if (created != null)
+        {
+            login(created.getName(), password);
         }
     }
 
