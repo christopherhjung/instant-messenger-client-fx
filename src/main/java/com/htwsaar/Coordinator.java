@@ -203,10 +203,9 @@ public class Coordinator
 
     public void addRecipient(String name)
     {
-        ServerConnection.INSTANCE.getUserFromName(name, user -> {
+        getUser(name,user -> {
             if (user != null)
             {
-                UserLogic.INSTANCE.insertUser(user.getID(), user.getName());
                 updateRecipients();
             }
         });
